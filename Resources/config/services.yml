@@ -1,12 +1,12 @@
 parameters:
-    omnipay.class: ColinODell\OmnipayBundle\Service\Omnipay
+  omnipay.class: ColinODell\OmnipayBundle\Service\Omnipay
 
 services:
-    omnipay:
-        class: %omnipay.class%
-        arguments:
-            - "@omnipay.factory"
+  omnipay:
+    class: "%omnipay.class%"
+    arguments:
+      - "@omnipay.factory"
 
-    omnipay.factory:
-        class: Omnipay\Common\GatewayFactory
-        public: false
+  omnipay.factory:
+    class: Omnipay\Common\GatewayFactory
+    public: false

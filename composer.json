@@ -1,7 +1,12 @@
 {
     "name": "colinodell/omnipay-bundle",
-    "description": "Omnipay bundle for Symfony 2.3+ and 3.0+",
-    "keywords": ["omnipay", "bundle", "symfony", "payment", "symfony2", "symfony3"],
+    "description": "Omnipay bundle for Symfony 5+",
+    "keywords": [
+        "omnipay",
+        "bundle",
+        "symfony",
+        "payment"
+    ],
     "homepage": "https://github.com/colinodell/omnipay-bundle",
     "license": "MIT",
     "authors": [
@@ -13,13 +18,12 @@
         }
     ],
     "require": {
-        "php": ">=5.6",
-        "omnipay/common": "^3.0",
-        "symfony/framework-bundle": "^2.3||^3.0"
+        "php": ">=7.4",
+        "league/omnipay": "^3.0",
+        "symfony/framework-bundle": "^5"
     },
     "require-dev": {
-        "omnipay/paypal": "^3.0",
-        "php-http/guzzle6-adapter": "^1.1.1",
+        "omnipay/dummy": "^3.0",
         "phpunit/phpunit": "^3.7|^4.8"
     },
     "autoload": {

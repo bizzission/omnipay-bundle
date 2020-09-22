@@ -26,25 +26,27 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('omnipay');
+        // $treeBuilder = new TreeBuilder();
+        // $rootNode = $treeBuilder->root('omnipay');
+        $treeBuilder = new TreeBuilder('omnipay');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
-                ->arrayNode('methods')
-                    ->useAttributeAsKey('name')
-                    ->prototype('variable')
-                    ->end()
-                ->end()
-                ->scalarNode('default_gateway')
-                    ->defaultNull()
-                ->end()
-                ->booleanNode('initialize_gateway_on_registration')
-                    ->defaultFalse()
-                ->end()
-                ->arrayNode('disabled_gateways')
-                    ->prototype('scalar')
-                ->end()
+            ->arrayNode('methods')
+            ->useAttributeAsKey('name')
+            ->prototype('variable')
+            ->end()
+            ->end()
+            ->scalarNode('default_gateway')
+            ->defaultNull()
+            ->end()
+            ->booleanNode('initialize_gateway_on_registration')
+            ->defaultFalse()
+            ->end()
+            ->arrayNode('disabled_gateways')
+            ->prototype('scalar')
+            ->end()
             ->end();
 
         return $treeBuilder;
